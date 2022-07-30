@@ -64,7 +64,7 @@ def msgFormat(msg):
     if "CQ:at" in msg:
         if "all" in msg:
             regex1 = re.compile(r'\[CQ:at,qq=all]')
-            at_cqcode = regex1.search(msg)
+            at_cqcode = re.findall(regex1, msg)
             for code in at_cqcode:
                 msg = msg.replace(code, ' @全体成员 ')
         else:
